@@ -1,0 +1,19 @@
+body { max-width: 56rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.6; color: #172033; }
+h1, h2, h3 { line-height: 1.3; }
+section { margin-top: 2.5rem; }
+label { display: block; font-weight: 600; }
+input, button { font: inherit; padding: 0.5rem 0.75rem; }
+input[type="text"] { display: block; width: 100%; max-width: 26rem; box-sizing: border-box; margin: 0.4rem 0 0.8rem; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+.acoes { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+.catalogo { padding: 0; list-style: none; }
+.catalogo li { margin: 0.7rem 0; }
+.catalogo label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; }
+pre, code { background: #eef1f6; padding: 0.2rem 0.35rem; }
+pre { padding: 0.75rem; white-space: pre-wrap; min-height: 1.6em; }
+p, pre, code, li { overflow-wrap: anywhere; }
+.observacao { background: #fff5d6; padding: 0.75rem; }
+[data-estado="error"] { color: #991b1b; }
+[data-estado="success"] { color: #166534; }
+[hidden] { display: none !important; }

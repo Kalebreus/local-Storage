@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O que é o localStorage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="produtos.js" defer></script>
+    <script src="armazenamento.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>O que é o localStorage?</h1>
+      <p>Pratique strings, arrays e recuperação dos dados. Recarregue a página ou abra outra aba no mesmo endereço HTTP para observar a persistência.</p>
+      <p id="aviso-http" class="observacao" hidden>Use o servidor HTTP indicado no README. O comportamento do localStorage em file:// varia entre navegadores.</p>
+      <p>Origem desta página: <code id="origem-atual"></code></p>
+
+      <section aria-labelledby="titulo-nome">
+        <h2 id="titulo-nome">1. Básico: salvar uma string</h2>
+        <label for="nome">Nome de exibição para o exemplo</label>
+        <input id="nome" type="text" autocomplete="off">
+        <div class="acoes">
+          <button id="salvar-nome" type="button">Salvar nome</button>
+          <button id="ler-nome" type="button">Ler nome salvo</button>
+          <button id="remover-nome" type="button">Remover nome</button>
+        </div>
+        <p>Valor lido: <span id="nome-atual">—</span></p>
+        <p id="estado-nome" role="status" data-estado="idle"></p>
+      </section>
+
+      <section aria-labelledby="titulo-produtos">
+        <h2 id="titulo-produtos">2. Intermediário: salvar um array como JSON</h2>
+        <p>Escolha itens do array da aula. Os preços aparecem como fornecidos, sem conversão de unidade.</p>
+        <ul id="catalogo" class="catalogo"></ul>
+        <div class="acoes">
+          <button id="selecionar-todos" type="button">Selecionar todos</button>
+          <button id="desmarcar-todos" type="button">Desmarcar todos</button>
+          <button id="salvar-produtos" type="button">Salvar seleção</button>
+          <button id="ler-produtos" type="button">Ler produtos salvos</button>
+          <button id="remover-produtos" type="button">Remover produtos salvos</button>
+        </div>
+        <p id="estado-produtos" role="status" data-estado="idle"></p>
+        <h3>Produtos recuperados</h3>
+        <ul id="produtos-salvos" aria-label="Produtos salvos"></ul>
+        <h3>Representação JSON dos dados recuperados</h3>
+        <pre id="json-produtos"></pre>
+        <p>Uma seleção vazia pode ser salva como <code>[]</code>. Isso é diferente de remover a chave.</p>
+      </section>
+
+      <section aria-labelledby="titulo-avancado">
+        <h2 id="titulo-avancado">3. Avançado: leitura, erros e outras abas</h2>
+        <p>Abra outra aba com este mesmo endereço. Salvar ou remover um valor em uma aba atualiza os dados exibidos na outra pelo evento <code>storage</code>.</p>
+        <p id="sincronizacao" role="status">Nenhum evento de outra aba recebido nesta página.</p>
+        <button id="limpar-aula" type="button">Apagar nome e produtos desta aula</button>
+        <p id="estado-limpeza" role="status"></p>
+        <p>Esta ação remove somente as duas chaves da demonstração. O README explica <code>clear()</code>, erros de acesso e recuperação de dados inválidos.</p>
+      </section>
+      <noscript>Ative o JavaScript no navegador para executar os exemplos.</noscript>
+    </main>
+  </body>
+</html>
